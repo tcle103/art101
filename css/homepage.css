@@ -9,8 +9,3 @@
 #selfie {
   width: 200px;
 }
-
-.minor_section {
-  column-count: 2;
-  column-fill: balance;
-}
