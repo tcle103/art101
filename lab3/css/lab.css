@@ -7,3 +7,25 @@
     border: solid 1px #888;
     background-color: #DDD8C4;
   }
+
+
+/* attempted grid stuff from here: https://www.w3schools.com/cssref/tryit.php?filename=trycss_grid2 */
+.grid {
+  display: grid;
+  grid: 
+  'screenshot1 screenshot2'
+  'screenshot1 screenshot3'
+}
+
+
+.screenshot1 img {
+  width: 200px;
+}
+
+.screenshot2 img {
+  width: 500px;
+}
+
+.screenshot3 img {
+  width: 500px;
+}

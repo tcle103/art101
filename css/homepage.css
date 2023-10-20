@@ -1,6 +1,16 @@
 /* this css file will only style the homepage of our site */
 
+
 .cat-photo {
   margin: 10px;
   max-width: 500px;
+}
+
+#selfie {
+  width: 200px;
+}
+
+.minor_section {
+  column-count: 2;
+  column-fill: balance;
 }
