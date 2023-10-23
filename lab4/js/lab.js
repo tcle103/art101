@@ -1,21 +1,18 @@
-// index.js - purpose and description here
-// Author: Your Name
-// Date:
+// RPS Pseudocode
+// Simple pseudocode for an implementation of rock-paper-scissors
+// Tien Le <ticale@ucsc.edu>
+// 10/23/23
 
-// Constants
-
-// Functions
-
-// this is an example function and this comment tells what it doees and what parameters are passed to it.
-function myFunction(param1, param2) {
-  // some code here
-  // return results;
-}
-
-function main() {
-  console.log("Main function started.");
-  // the code that makes everything happen
-}
-
-// let's get this party started
-main();
+// Print welcome prompt
+// Begin play loop
+  // Prompt for user input
+	// Check if valid user input, if not, prompt again
+  // Determine machine response randomly from pool of responses
+  // Determine win/loss and store
+  // Countdown/delay
+  // Print machine response and win/loss
+  // Return to beginning
+  // After three total games, exit loop
+// Determine overall winner based on stored win/loss
+// Print win/loss message
+// Exit
