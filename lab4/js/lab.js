@@ -6,7 +6,7 @@
 // Print welcome prompt
 // Begin play loop
   // Prompt for user input
-	// Check if valid user input, if not, prompt again
+	  // Check if valid user input, if not, prompt again
   // Determine machine response randomly from pool of responses
   // Determine win/loss and store
   // Countdown/delay
