@@ -6,4 +6,16 @@
     margin-bottom: 10px;
     border: solid 1px #888;
     background-color: #DDD8C4;
+    clear: both;
+    /* below solution is from https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+    display: flow-root;
   }
+
+img {
+  width: 500px;
+  float: right;
+}
+
+script{
+  float: left;
+}
