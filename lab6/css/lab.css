@@ -6,4 +6,16 @@
     margin-bottom: 10px;
     border: solid 1px #888;
     background-color: #DDD8C4;
+    display: flow-root;
+    clear: both;
   }
+
+img {
+  width: 500px;
+}
+
+#bachimage {
+  float: right;
+  text-align: center;
+  padding-left: 30px;
+}
