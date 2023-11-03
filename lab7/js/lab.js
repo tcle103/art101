@@ -64,14 +64,14 @@ function nameArrayToString(name, nameArray) {
                 if (copyArray[i] != copyArray[i+1]) { // compare with next elem in array, if differs, create slice of only duplicates
                     arraySlice = copyArray.slice(0, i+1);
                     copyArray.splice(0, arraySlice.length); // remove sliced portion from copyArray
-                    console.log(arraySlice, copyArray);
+                    //console.log(arraySlice, copyArray);
                     break;
                 }
                 else {
                     if ((i+1) === (copyArray.length-1)) { // in case it's duplicates until the end of the array
                         arraySlice = copyArray.slice();
                         copyArray.splice(0); // ensure copyArray is empty now!
-                        console.log(arraySlice, copyArray);
+                        //console.log(arraySlice, copyArray);
                         break;
                     }
                 }
@@ -81,7 +81,7 @@ function nameArrayToString(name, nameArray) {
         else { // only one elem left in copyArray
             arraySlice = copyArray.slice();
                 copyArray.splice(0); // ensure copyArray is empty now!
-                console.log(arraySlice, copyArray);
+                //console.log(arraySlice, copyArray);
         }
         
         // count how many capitals of each character is in name
@@ -93,7 +93,7 @@ function nameArrayToString(name, nameArray) {
             }
             ++i;
         }
-        console.log("Number of",arraySlice[0].toUpperCase(),":",capitalCount);
+        //console.log("Number of",arraySlice[0].toUpperCase(),":",capitalCount);
 
         // concatenate finalString with correct numbers of capitals
         while (arraySlice.length > 0) {
@@ -106,10 +106,14 @@ function nameArrayToString(name, nameArray) {
             }
             arraySlice.splice(0,1);
         }
-        console.log(finalString);
+        //console.log(finalString);
     }
     return finalString;
 }
+
+// !!!! TO-DO: implement shuffling for Task X 3, write out rest of functionality as asked for in lab + Task X 4 !!!!
+
+
 
 
 
