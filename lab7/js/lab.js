@@ -7,7 +7,7 @@
 /* sortName(name)
     Sorts the characters representing in a name by alphabetical order
     @param: name, a string
-    @return: sorted lowercase array
+    @return: nameArray, sorted lowercase array
 */
 function sortName(name) {
     // Task X 1: pretty easy if you make all lowercase, hard part is making them print uppercase (dunno if that matters)
@@ -25,7 +25,7 @@ function sortName(name) {
 /* removeSpaces(array)
     Helper function for removing all the characters representing spaces from an array in place
     @param: array, an array of string tokens
-    @return: array without spaces
+    @return: nothing
 */
 function removeSpaces(array) {
     // Task X 2: Help with removing spaces - https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript
@@ -113,13 +113,79 @@ function nameArrayToString(name, nameArray) {
 
 // !!!! TO-DO: implement shuffling for Task X 3, write out rest of functionality as asked for in lab + Task X 4 !!!!
 
+/* anagram(name, nameArray)
+    Makes an anagram out of an array of sorted, lowercase characters
+    @param: name, a string; nameArray, a sorted lowercase array
+    @return: anagram, a string
+*/
+function anagram(name, nameArray) {
+    // Task X 3: Shuffling, see if there is a random for use in JS.
+    // https://www.w3schools.com/JS/js_random.asp
+
+    // make a copy of nameArray
+    var copyArray = nameArray.slice();
+    
+    // count how many spaces in name
+    var i = 0; // counter
+    var spaceCount = 0;
+    while (i < name.length) {
+        if (name[i] === " ") {
+            ++spaceCount;
+        }
+        ++i;
+    }
+
+    while (spaceCount > 0) {
+        copyArray.push(" ");
+        --spaceCount;
+    }
+
+    // shuffle copyArray 50 times or something
+    i = 0; // reset counter
+    var temp = "";
+    var randomNum = 0;
+    while (i < 51) {
+        randomNum = Math.floor(Math.random() * (copyArray.length));
+        temp = copyArray[randomNum];
+        copyArray.splice(randomNum, 1);
+        copyArray.unshift(temp);
+        ++i;
+    }
+    //console.log(copyArray);
+
+    // create anagram w/ correct capitalization
+    var anagram = '';
+    i = 0; // reset counter
+    while (i < copyArray.length) {
+        if (i === 0) {
+            if (copyArray[0] === " ") {
+                ++i;
+                continue;
+            }
+            anagram += copyArray[i].toUpperCase();
+        }
+        else {
+            if (i === (copyArray.length-1)) {
+                if (copyArray[i] === " ") {
+                    break;
+                }
+            }
+            if (copyArray[i-1] === " ") {
+                anagram += copyArray[i].toUpperCase();
+            }
+            else {
+                anagram += copyArray[i];
+            }
+        }
+        ++i;
+    }
+    //console.log(anagram);
+    return anagram;
+}
 
 
 
 
-// Task X 3: Shuffling, see if there is a random for use in JS.
-// Will want to write a function for random picking from an array instead of in a loop since the array size will decrease constantly
-// https://www.w3schools.com/JS/js_random.asp
 
 // Task X 4: Simply include your <div> tag in your document.writeln() line (works for <i> etc.)
 
