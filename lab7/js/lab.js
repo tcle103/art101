@@ -41,6 +41,7 @@ function removeSpaces(array) {
     return;
 }
 
+
 /* nameArrayToString(name, nameArray)
     Turns a nameArray provided by sortName to a displayable string form, restoring capitalization
     @param: name, the original name string; nameArray, an array of sorted lowercase string tokens
@@ -111,7 +112,6 @@ function nameArrayToString(name, nameArray) {
     return finalString;
 }
 
-// !!!! TO-DO: implement shuffling for Task X 3, write out rest of functionality as asked for in lab + Task X 4 !!!!
 
 /* anagram(name, nameArray)
     Makes an anagram out of an array of sorted, lowercase characters
@@ -135,6 +135,7 @@ function anagram(name, nameArray) {
         ++i;
     }
 
+    // add the appropriate amount of spaces
     while (spaceCount > 0) {
         copyArray.push(" ");
         --spaceCount;
@@ -144,7 +145,7 @@ function anagram(name, nameArray) {
     i = 0; // reset counter
     var temp = "";
     var randomNum = 0;
-    while (i < 51) {
+    while (i < 51) { // basically just picks a random character, takes it out of the list, and puts it at the beginning
         randomNum = Math.floor(Math.random() * (copyArray.length));
         temp = copyArray[randomNum];
         copyArray.splice(randomNum, 1);
@@ -157,7 +158,7 @@ function anagram(name, nameArray) {
     var anagram = '';
     i = 0; // reset counter
     while (i < copyArray.length) {
-        if (i === 0) {
+        if (i === 0) { // capitalize first letter or removing heading space
             if (copyArray[0] === " ") {
                 ++i;
                 continue;
@@ -165,12 +166,12 @@ function anagram(name, nameArray) {
             anagram += copyArray[i].toUpperCase();
         }
         else {
-            if (i === (copyArray.length-1)) {
+            if (i === (copyArray.length-1)) { // remove trailing spaces for CSS formatting later
                 if (copyArray[i] === " ") {
                     break;
                 }
             }
-            if (copyArray[i-1] === " ") {
+            if (copyArray[i-1] === " ") { // capitalize all characters that come after a space
                 anagram += copyArray[i].toUpperCase();
             }
             else {
@@ -184,10 +185,8 @@ function anagram(name, nameArray) {
 }
 
 
+// Main body 
 
-
-
-// Task X 4: Simply include your <div> tag in your document.writeln() line (works for <i> etc.)
 
 /* Task X 5: pretty easy if you just declare your name var at beginning and then call function with that param
 
@@ -196,3 +195,10 @@ function printName(name = window.prompt("Enter your name:")) {
     console.log(name);
 }
 */
+var userName = window.prompt("Enter your name:");
+var userNameArray = sortName(userName);
+
+document.writeln(`Hi there, ${userName}!! Nice to meet you!<br><br>`)
+document.writeln("Here, I sorted your name for you: ", nameArrayToString(userName, userNameArray), "<br>All clean and tidy! It'd be a real shame if I- <br><br>");
+// Task X 4: Simply include your <div> tag in your document.writeln() line (works for <i> etc.)
+document.writeln("AWH DArn. I dropped them all... I think they're still fine, here you go... <div class=\"anagram\">", anagram(userName, userNameArray),"</div>");
