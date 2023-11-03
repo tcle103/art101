@@ -199,6 +199,7 @@ var userName = window.prompt("Enter your name:");
 var userNameArray = sortName(userName);
 
 document.writeln(`Hi there, ${userName}!! Nice to meet you!<br><br>`)
-document.writeln("Here, I sorted your name for you: ", nameArrayToString(userName, userNameArray), "<br>All clean and tidy! It'd be a real shame if I- <br><br>");
+document.writeln("Here, I sorted your name for you: <b>", nameArrayToString(userName, userNameArray), "</b><br>All clean and tidy! It'd be a real shame if I- <br><br>");
 // Task X 4: Simply include your <div> tag in your document.writeln() line (works for <i> etc.)
-document.writeln("AWH DArn. I dropped them all... I think they're still fine, here you go... <div class=\"anagram\">", anagram(userName, userNameArray),"</div>");
+document.writeln("AWH DArn. I dropped them all... I think they're still fine, here you go... <div class=\"anagram\"><img src=\"img/dust.jpg\"/><div class=\"anagramtext\"><b>", anagram(userName, userNameArray),"</b></div></div>");
+document.writeln("Just brush off the dust and it'll be good as new... I think.")

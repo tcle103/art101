@@ -6,4 +6,30 @@
     margin-bottom: 10px;
     border: solid 1px #888;
     background-color: #DDD8C4;
+
   }
+
+.anagram {
+  position: relative;
+  text-align: left;
+}
+
+.anagram img {
+  width: 100px;
+}
+
+
+/* for clipping images with text https://mgearon.com/css/css-background-clip-text/ 
+ for overlaying text on img https://www.w3schools.com/howto/howto_css_image_text.asp*/
+.anagramtext {
+  /* wow what the heck is url() */
+  font-size: 15pt;
+  background: url("../img/dirtyblack.jpg");
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0%, -50%);
+}
