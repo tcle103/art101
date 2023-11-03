@@ -1,6 +1,6 @@
 // Lab 7 - Functions
 // Tien Le <ticale@ucsc.edu>
-//11/3/23
+// 11/3/23
 
 //Function declarations
 
@@ -85,9 +85,30 @@ function nameArrayToString(name, nameArray) {
         }
         
         // count how many capitals of each character is in name
-        
+        i = 0; // reset counter
+        var capitalCount = 0;
+        while (i < name.length) {
+            if (name[i] === arraySlice[0].toUpperCase()) {
+                ++capitalCount;
+            }
+            ++i;
+        }
+        console.log("Number of",arraySlice[0].toUpperCase(),":",capitalCount);
+
+        // concatenate finalString with correct numbers of capitals
+        while (arraySlice.length > 0) {
+            if (capitalCount > 0) {
+                finalString += arraySlice[0].toUpperCase();
+                --capitalCount;
+            }
+            else {
+                finalString += arraySlice[0];
+            }
+            arraySlice.splice(0,1);
+        }
+        console.log(finalString);
     }
-    return;
+    return finalString;
 }
 
 
