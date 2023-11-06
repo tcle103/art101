@@ -8,3 +8,29 @@
     background-color: #DDD8C4;
 
   }
+
+  #output {
+    display: inline-block;
+    clear: right;
+    border: solid 1px #888;
+    padding: 10px;
+    line-height: 1.4;
+  }
+
+  #surprise {
+    color: palevioletred;
+  }
+
+  #stars {
+    /* whitespace solution from here https://stackoverflow.com/a/59349658 */
+    clear: left;
+    display: inline-block;
+    white-space: pre-wrap;
+    text-align: center;
+  }
+
+  .small {
+    color: grey;
+    font-size: 10pt;
+    padding-left: 20px;
+  }
