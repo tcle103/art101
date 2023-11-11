@@ -8,6 +8,13 @@ $(".minor-section").append("<button class='special-button'>Make Special</button>
 // make each button toggle "special" for the section it is in on
 $(".special-button").click(function(){ 
     $(this).parent().toggleClass("special");
+    // text toggle (extra)
+    if ($(this).parent().hasClass("special")) {
+        $(this).html("Make Unspecial");
+    }
+    else {
+        $(this).html("Make Special");
+    }
 })
 
 // longer version
