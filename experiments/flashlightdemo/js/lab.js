@@ -1,7 +1,12 @@
+// Flashlight Demo for an effect using masks created with multiple SVG paths 
+// Tien Le
+// 11/13/23
+
+// HEAVILY based on this except using DOMPoints https://codepen.io/noeldelgado/pen/ByxQjL
+
 var svgPoint = new DOMPoint();
 var svgElement = document.querySelector('svg');
 var maskedCircle = document.getElementById("maskedCircle")
-
 
 // pretty much turn mouse location based on a mouse event (mousemove)
 // into a coordinate in the svg element (so can move the mask there)
