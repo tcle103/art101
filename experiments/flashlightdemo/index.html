@@ -26,16 +26,41 @@
             <p>This is very close to working, but I can't interact with any of the elements under the beam :(</p>
         </div>
         <!-- https://codepen.io/noeldelgado/pen/ByxQjL -->
-        <svg id="mySvg" width="1000" height="1000">
+        <svg id="mySvg" width="1000">
             <defs>
                 <mask id="flashlight">
                     <rect x="0" y="0" width="3000" height="3000" fill="white" />
                     <circle id="maskedCircle" cx="60" cy="60" r="100" fill="black" />
                 </mask>
-
             </defs>
             <rect x="0" y="0" width="1000" height="1000" fill="black" mask="url(#flashlight)" />
         </svg>
+
+    </div>
+    <div id="postmortem">
+        <p>
+            This works by making a mask with inline SVGs - a black circle on a white background - and using that to mask or
+            "punch a hole" in a big black rectangle that covers the elements beneath it. I thought it was pretty interesting 
+            to be able to do this without having to make some kind of external asset to use as a mask, like an SVG drawn in 
+            Inkscape or a raster photo. <br><br>
+            The use of SVGs here lets you manipulate/animate the mask itself without CSS animation stuff, instead being able
+            to handle it all in JS, which as far as I can tell lets us give it more interactivity! It was challenging having to 
+            handle the fact that coordinates within the SVG container are calculated differently from DOM coordinates, and I end 
+            up having to reference other materials heavily in order to get the mouse-following effect on the mask. <br><br>
+            The resource that I referenced and was inspired by the most was by far 
+            <a href="https://codepen.io/noeldelgado/pen/ByxQjL">Noel Delgado's "X-ray me" SVG demo,</a> though our demos differ 
+            in that I didn't want the elements underneath to be within the SVG container, since it may be harder to work 
+            with elements within the limitations of the SVG container, and that rather than "punching a hole"
+            to show what's underneath instead clips or "cuts out" the element underneath in the window's shape.<br><br>
+            Upon further experimentation I found I could use the moving mask to clip images and even whole divs 
+            of content, but because this method requires some static element like an image or a SVG container or whatever to exist 
+            on top of the others, I believe this makes it so that I can't interact the elements underneath. Ultimately this technique 
+            then doesn't really work how I had intended, but I think the layering of inline SVGs and the masking 
+            clipping stuff can totally be used for neat limited-interaction animated effects. It could probably work if you wanted the 
+            SVG container itself to be interactive, such as clicking on or hovering triggering something! <br><br>
+            Future things to explore: adding interactivity to objects within inline SVG containers that may make this work, and otherwise 
+            finding other ways to implement a similar effect!
+        </p>
     </div>
 
 

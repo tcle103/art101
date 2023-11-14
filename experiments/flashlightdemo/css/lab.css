@@ -2,6 +2,7 @@
     position: relative;
 }
 svg {
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -11,7 +12,20 @@ svg {
     top: 0;
     left:0%;
 }
+.under p {
+    margin-left: 15px;
+}
+.under button {
+    margin-left: 15px;
+}
 #flowers {
     height: 500px;
+}
+#postmortem {
+    position: absolute;
+    left: 1000px;
+    padding-left: 30px;
+    margin-right: 20px;
+    display: inline-block;
 }
 

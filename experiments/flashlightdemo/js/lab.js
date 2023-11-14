@@ -25,6 +25,7 @@ function update(svgCoords) {
 
 window.addEventListener('mousemove', function (e) {
     update(getCursorPoint(e, svgElement));
+    console.log("im moving!")
 }, false);
 
 $(".under").append("<br><button class='special-button'>nah nah na nah nah you can't click me</button>");
