@@ -1,0 +1,17 @@
+.things {
+    position: relative;
+}
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.under {
+    position: absolute;
+    top: 0;
+    left:0%;
+}
+#flowers {
+    width: 1000px;
+}
+

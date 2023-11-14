@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Group 12 Flashlight Demo</title>
+
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Lab-specifc CSS file for any special styling of this particular page -->
+    <link rel="stylesheet" type="text/css" href="css/lab.css">
+
+    <!-- load jQuery library to make javascript easier (must be above our lab js)-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Link to javascript file - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="./js/lab.js" DEFER></script>
+</head>
+
+<body>
+    <div class="thing">
+        <div class="under">
+            <img id="flowers" src="img/flowers.jpg" />
+            <p>This is very close to working, but I can't interact with any of the elements under the beam :(</p>
+        </div>
+        <!-- https://codepen.io/noeldelgado/pen/ByxQjL -->
+        <svg id="mySvg" width="1000" height="1000">
+            <defs>
+                <mask id="flashlight">
+                    <rect x="0" y="0" width="3000" height="3000" fill="white" />
+                    <circle id="maskedCircle" cx="60" cy="60" r="100" fill="black" />
+                </mask>
+
+            </defs>
+            <rect x="0" y="0" width="1000" height="1000" fill="black" mask="url(#flashlight)" />
+        </svg>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<!-- 
+-->
