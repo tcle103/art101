@@ -32,6 +32,12 @@ $(".under").append("<br><button class='special-button'>oh no!! im clickable :(( 
 $(".special-button").click(function(){
     console.log("clicked");
     $(".under").toggleClass("clipped");
+    if ($(".under").hasClass("clipped")) {
+        $(".special-button").html("oh no!! im clickable :(( you can turn on the lights now...");
+    }
+    else {
+        $(".special-button").html("oh no!! im clickable :(( you can turn off the lights now...");
+    }
 })
 
 setTimeout(function(){
