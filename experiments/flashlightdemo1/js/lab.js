@@ -33,3 +33,7 @@ $(".special-button").click(function(){
     console.log("clicked");
     $(".under").toggleClass("clipped");
 })
+
+setTimeout(function(){
+    $(".under").append("<div id='surprise'>boo!</div>");
+}, 5000);
