@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Flashlight Demo</title>
+
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Lab-specifc CSS file for any special styling of this particular page -->
+    <link rel="stylesheet" type="text/css" href="css/lab.css">
+
+    <!-- load jQuery library to make javascript easier (must be above our lab js)-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Link to javascript file - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="./js/lab.js" DEFER></script>
+</head>
+
+<body>
+    <div class="thing">
+        <svg id="mySvg" width="1000">
+            <defs>
+                <radialGradient id="shadowGrad">
+                    <stop offset="80%" stop-color="white" />
+                    <stop offset="95%" stop-color="black" />
+                </radialGradient>
+                <mask id="flashlight">
+                    <rect x="0" y="0" width="3000" height="3000" fill="black" />
+                    <circle id="maskedCircle" cx="60" cy="60" r="140" fill="url(#shadowGrad)" />
+                </mask>
+            </defs>
+            <rect x="0" y="0" width="1000" height="1000" fill="black"/>
+        </svg>
+        <div class="under clipped">
+            <img id="flowers" src="img/flowers.jpg" />
+            <p>It's working!!! Highlight me!!!</p>
+        </div>
+        <!-- https://codepen.io/noeldelgado/pen/ByxQjL -->
+        
+
+    </div>
+    <div id="postmortem">
+        <p>
+            Pretty much exactly the same as last time - except now, the elements "under" the beam are interactable!!!!<br><br>
+            It still pretty much uses the inline SVG masking system as last time, except now the mask is inverted (white circle 
+            on a black background) and clips the div itself, so rather than something "under" it's technically a circle cutout 
+            <i>on top</i> of the darkness. It works like magic :D!! Ironically this brings me a lot closer to 
+            <a href="https://codepen.io/noeldelgado/pen/ByxQjL">Noel Delgado's X-Ray SVG experiment,</a> which I referenced for 
+            my last attempt too.<br><br>
+            This technique lets me use something else underneath for the darkness, so potentially having a "darkened"
+            version of clipped div could create a cool effect. Also, since the mask is applied using CSS, I'm able to use jQuery to
+            "switch on" the lights - by "switching off" the clipping! I experimented too with using a radial gradient to create a 
+            softer edge on the beam's area. I think it looks pretty good! Very happy with the results!
+        </p>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<!-- 
+-->
