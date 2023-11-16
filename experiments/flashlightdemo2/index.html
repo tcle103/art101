@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Flashlight Demo 2</title>
+
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Lab-specifc CSS file for any special styling of this particular page -->
+    <link rel="stylesheet" type="text/css" href="css/lab.css">
+
+    <!-- load jQuery library to make javascript easier (must be above our lab js)-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Link to javascript file - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="./js/lab.js" DEFER></script>
+</head>
+
+<body>
+    <div class="thing">
+        <svg id="mySvg" width="1000">
+            <defs>
+                <clipPath id="flashlight">
+                    <circle id="maskedCircle" cx="60" cy="60" r="100"/>
+                </clipPath>
+            </defs>
+            <rect x="0" y="0" width="1000" height="1000" fill="black"/>
+        </svg>
+        <div class="under clipped">
+            <img id="flowers" src="img/flowers.jpg" />
+            <p>It's working EVERYWHERE!!! Highlight me!!!</p>
+        </div>
+        <!-- https://codepen.io/noeldelgado/pen/ByxQjL -->
+        
+
+    </div>
+    <div id="postmortem">
+        <p>
+            THIRD ITERATION!!! Now it should have support on for pretty much all browsers except IE, which, to be honest, I'm not
+            too pressed about. Same as last time, credit to <a href="https://codepen.io/noeldelgado/pen/ByxQjL">Noel Delgado's X-Ray SVG experiment</a> 
+            which I referenced for my last two attempts, and now thank you to <a href="https://codepen.io/yoksel/full/GRodvp">yoksel's clipping masking demo page</a> 
+            for helping me find an alternative to masking HTML elements (which is somehow not supported by anyone other than Firefox). <br><br>
+            Functionally, this is pretty much very similar to <a href="../flashlightdemo1/index.html">Flashlight Demo 1,</a> with two major changes:
+            <ol>
+                <li>The mask now only consists of the black circle without any white background</li>
+                <li>It now uses clip-path in the CSS to clip the div, which has better support</li>
+            </ol>
+            It has pretty much all of the same benefits and functionality as last time it seems, except that clipping doesn't support using a radial gradient.
+            My lovely soft edge :( <br><br>
+            I do miss the visuals of the mask a bit, but other than that I'm pretty happy that it seems to work! Can totally use this!
+        </p>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<!-- 
+-->
