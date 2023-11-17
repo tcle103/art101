@@ -20,6 +20,7 @@ function generateRandomText() {
 // this is a fake send button which doesn't have to actually deal with HTML submit things!
 $("#send").click(userSubmit = function (e) {
     e.preventDefault(); // stops form from submitting on the enter variation
+    // https://api.jquery.com/submit/
 
     var userInput = $("#user-input").val(); // get user input from text box
     if (userInput != "") {
@@ -28,7 +29,7 @@ $("#send").click(userSubmit = function (e) {
         $("#user-input").val('') // clear
         $("#text-display").append(`<div class='user texts'>${userInput}</div>`); // append user input to texts
 
-        // handle auto response
+        // handle auto response 
         var i = 0;
         var randNum = (Math.floor(Math.random() * 2)+1);
         while (i < randNum) {
