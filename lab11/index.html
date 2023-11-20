@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Lab 11 - Javascript Events and Forms</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+  	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- Include a sitewide CSS file for consistent styling across the site -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<!-- Lab-specifc CSS file for any special styling of this particular page -->
+	<link rel="stylesheet" type="text/css" href="css/lab.css">
+	
+	<!-- load jQuery library to make javascript easier (must be above our lab js)-->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<!-- Link JS file-->
+	<script src="js/lab.js" defer></script>
+
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/lab.css -->
+	<main id="content">
+		<section>
+			<h1>Lab 11 - Javascript Events and Forms</h1>
+			<div class="minor-section" id="challenge">
+					<h2>Challenge</h2>
+					<p>The challenge of this lab was to become more familiar with and learn how to utilize JS events!</p>
+			</div>
+
+			<div class="minor-section" id="thoughts">
+					<h2>Thoughts</h2>
+					<p>
+						This lab probably took the most time out of all of them, but I had a real hoot implementing the glitch effect.
+						I hope you enjoy! (warning maybe for bright flashing colors and all).<br><br>
+						I definitely took a bit of an unorthodox approach to Task X but I really like how it turned out, and I hope you guys 
+						will have as much fun with it as I did. Credit to <a href="https://developer.mozilla.org/en-US/docs/Web/API/setInterval">
+						MDN's page on setInterval()</a> for help with implementing my glitches using setTimeout(), <a href="https://stackoverflow.com/a/14638679">
+						this Stack Overflow solution</a> for tips on selecting random HTML elements in JS, and my dad for telling me to make elements 
+						invisble instead of deleting them. I guess he doesn't have a degree for nothing!
+					</p>
+			</div>
+
+			<div class="minor-section" id="results">
+					<h2>Results</h2>
+					<p id="resultstext">Output here!!</p>
+					<div class="container">
+						<div id="form">
+							<input  type="text" id="user-name" placeholder="Your name?"><br><br>
+					
+							<label for="user-color">Your favourite color?  </label>
+							<input  type="color" id="user-color"><br>
+					
+							<p>Allow sparkles? (experimental)</p>
+							<input  type="radio" id="yes" name="sparkles" value="1">
+							<label for="yes">Yes</label><br>
+							<input  type="radio" id="no" name="sparkles" value="0">
+							<label for="no">No</label><br><br>
+					
+							<button id="submit">Submit</button>
+						</div>
+						<div id="output">
+							<div id="nametag-container"></div>
+							<div id="buttons-container"></div>
+						</div>
+					</div>
+					
+			</div>
+		</section>
+		<nav id="links">
+			<!-- Put links to other pages (including the homepage) here. -->
+			<ul>
+				<li><a href="../index.html" target="_new">Homepage</a></li>
+			</ul>
+		</nav>
+	</main>
+</body>
+</html>
