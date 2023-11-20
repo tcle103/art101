@@ -118,7 +118,7 @@ function glitch(){
     console.log("uhohh");
     var time = Math.floor((Math.random() * 10500)+500);
     setTimeout(function() {
-        // random element selector from here
+        // random element selector from here https://stackoverflow.com/a/14638679
         var choice = Math.floor(Math.random()*10);
         var divs = $("div");
 
@@ -169,7 +169,7 @@ function glitch(){
 
         }
         glitch()
-    }, 1000);
+    }, time);
 }
 
 function nametag(name) {
