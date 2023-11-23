@@ -17,7 +17,7 @@ function hash(str) {
 }
 
 function sortingHat(str) {
-    return houseArray[hash(str) % houseArray.length];
+    return houseArray[Math.abs(hash(str) % houseArray.length)];
 }
 
 $("#submit").click(function(){
