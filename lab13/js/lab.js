@@ -5,13 +5,11 @@
 
 // based on professor's version shown in the lab page
 function fizzBuzzBoom(maxNum, factorObj) {
-    // create a table containing results - https://stackoverflow.com/a/8749347
-    var table = "<table>";
     var outputString = '';
     var words;
     for (var i = 0; i < maxNum; ++i) {
+        outputString = ''
         words = '';
-        outputString += "<td>";
         outputString += i;
         outputString += " ";
         for (var factor in factorObj) {
@@ -22,15 +20,8 @@ function fizzBuzzBoom(maxNum, factorObj) {
         if (words) {
             outputString += (" - "+ words + "!");
         }
-        outputString += "</td>";
-        if (((i+1) % 6 == 0)) {
-            table += ("<tr>"+outputString+"</tr>");
-            outputString = '';
-        }
+        $("#output").append(outputString+"<br>");
     }
-    table += ("<tr>"+outputString+"</tr>");
-    table += "</table>";
-    $("#output").append(table);
 }
 
 $("#submit").click(function(){

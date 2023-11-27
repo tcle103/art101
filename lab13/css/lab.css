@@ -8,6 +8,6 @@
   background-color: #DDD8C4;
 }
 
-#output table {
-  width: 100%;
+#output {
+  columns: 6 auto;
 }
