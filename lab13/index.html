@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Lab 13 - Loops</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+  	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- Include a sitewide CSS file for consistent styling across the site -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<!-- Lab-specifc CSS file for any special styling of this particular page -->
+	<link rel="stylesheet" type="text/css" href="css/lab.css">
+	
+	<!-- load jQuery library to make javascript easier (must be above our lab js)-->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<!-- Link JS file-->
+	<script src="js/lab.js" defer></script>
+
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/lab.css -->
+	<main id="content">
+		<section>
+			<h1>Lab 13 - Loops</h1>
+			<div class="minor-section" id="challenge">
+					<h2>Challenge</h2>
+					<p>The challenge was to figure out how to work with loops!</p>
+			</div>
+
+			<div class="minor-section" id="thoughts">
+					<h2>Thoughts</h2>
+					<p>
+						I've never used tables before! So learning how to work with those was difficult, but seeing how it was used in Prof's 
+						example helped a lot, along with referencing <a href="https://stackoverflow.com/a/8749347">this Stack Overflow answer</a> 
+						and w3Schools. Procedurally generating an object was also a bit of a head-scratcher for me, but ultimately thanks to 
+						<a href="https://stackoverflow.com/a/69328904">this Stack Overflow answer</a> I figured it out; turns out it's a lot like 
+						working with dictionaries in Python! All in all, I'm pretty happy with how my program turned out, even though it's not 
+						super stylish or anything.
+					</p>
+			</div>
+
+			<div class="minor-section" id="results">
+					<h2>Results</h2>
+					<table>
+						<p>How many to print? <input type="number" min="1" max="100" id="maxnum"/></p>
+						<tr>
+							<th>Factor</th>
+							<th>Prints</th>
+						</tr>
+						<tr>
+							<td><input type="number" min="0" max="23" id="num0"></td>
+							<td><input type="text" id="text0"></td>
+						</tr>
+						<tr>
+							<td><input type="number" min="0" max="23" id="num1"></td>
+							<td><input type="text" id="text1"></td>
+						</tr>
+						<tr>
+							<td><input type="number" min="0" max="23" id="num2"></td>
+							<td><input type="text" id="text2"></td>
+						</tr>
+						<tr>
+							<td><input type="number" min="0" max="23" id="num3"></td>
+							<td><input type="text" id="text3"></td>
+						</tr>
+					</table>
+					<button id="submit">Submit</button>
+						<div id="output">
+						</div>
+					</div>
+					
+			</div>
+		</section>
+		<nav id="links">
+			<!-- Put links to other pages (including the homepage) here. -->
+			<ul>
+				<li><a href="../index.html" target="_new">Homepage</a></li>
+			</ul>
+		</nav>
+	</main>
+</body>
+</html>
