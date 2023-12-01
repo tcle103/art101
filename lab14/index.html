@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Lab 14 - Debugging</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+  	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<!-- Include a sitewide CSS file for consistent styling across the site -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<!-- Lab-specifc CSS file for any special styling of this particular page -->
+	<link rel="stylesheet" type="text/css" href="css/lab.css">
+	
+	<!-- load jQuery library to make javascript easier (must be above our lab js)-->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<!-- Link JS file-->
+	<script src="js/lab.js" defer></script>
+
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/lab.css -->
+	<main id="content">
+		<section>
+			<h1>Lab 14 - Debugging</h1>
+			<div class="minor-section" id="challenge">
+					<h2>Challenge</h2>
+					<p>The challenge was to learn how to debug our programs!</p>
+			</div>
+
+			<div class="minor-section" id="thoughts">
+					<h2>Thoughts</h2>
+					<div class="captionphoto unit">
+						<img id="debugphoto" src="img/debuggerinteraction.JPG"/>
+						<p>My interactions with the console while at various debugger breakpoints!</p>
+					</div>
+					<p>
+						Flexbox is so, so cool... making those funny caption boxes that 
+						I seem to love doing so much is waaay easy now! <br><br>
+						
+						For this lab, in addition to doing the debugging stuff detailed below, 
+						I also experimented with using "debugger" to create a breakpoint for a 
+						test function. I've worked with breakpoints before, so it works about 
+						how I expected to, but it was still really neat to see it in action! 
+						<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger">
+							MDN's documentation
+						</a>, as always, helped out here. The coolest part about this to me 
+						was that I could still interact with the console while we were paused 
+						at the breakpoint! While I'm used to setting watches and seeing the changes 
+						passively, the debugger here lets me interact with the page at that point 
+						in execution live! Super cool!!!
+						
+					</p>
+			</div>
+
+			<div class="minor-section" id="results">
+					<h2>Results</h2>
+					<h3>Debugging!</h3>
+					
+					<div id="debugging">
+						<div>
+							<p>I didn't really have too much to debug, since for the most part  
+								the script portions of my labs are the parts I generally do 
+								well on! Really, if this was about the CSS of my early labs instead...<br><br>
+								However! I did find that a lab I completed to the assignment's 
+								specifications - Lab 6 - didn't seem to work the way I expected, and 
+								wouldn't print out the age property of my car object. 
+								I found out later that it is probably because of the way JSON.stringify() 
+								turns data from arrays and objects into strings. According to 
+								<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">
+									the MDN documentation for JSON.stringify()
+								</a>, the "replacer" function used has this default behavior:
+								<h4 class="tab">"If [your key returns] a Function, Symbol, or undefined, 
+									the property is not included in the output."</h4>
+								So, I simply wrote a new replacer! Now my car's age gets stringify-d 
+								with the rest of the properties!<br><br></p>
+						</div>
+						<div class="unit">
+							<img src="img/before.JPG"/>
+							<p>My Lab 6, previously.</p>
+						</div>
+						<div class="unit">
+							<img src="img/debugged.JPG"/>
+							<p>My debugged Lab 6!!</p>
+						</div>
+						<div class="unit" id="output">
+							<h4>New Script Output <br> (also check it out on my Lab 6 page)!</h4>
+						</div>
+					</div>
+					
+			</div>
+		</section>
+		<nav id="links">
+			<!-- Put links to other pages (including the homepage) here. -->
+			<ul>
+				<li><a href="../index.html" target="_new">Homepage</a></li>
+			</ul>
+		</nav>
+	</main>
+</body>
+</html>

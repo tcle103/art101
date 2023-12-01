@@ -16,5 +16,12 @@ var myMainRide = {
 
 // output! (myMainRide is an object so printing it is weird!)
 document.writeln("Going places: ", myTransport+"<br>");
-document.writeln("<i>The</i> Dragonmobile: <pre>",
-  JSON.stringify(myMainRide, null, '\t'), "</pre>");
+document.writeln("<i>The</i> Dragonmobile: <br><pre>",
+  JSON.stringify(myMainRide, function(key, value) {
+    if (key === "age") {
+      return myMainRide.age();
+    }
+    else {
+      return value;
+    }
+  }, '\t'), "</pre>");
