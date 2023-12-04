@@ -81,6 +81,11 @@ function pokeDisplay(pokedata, id, b) {
 
   }
 
+  if (!(sprite)) {
+    console.log("missing something!");
+    sprite = pokedata.sprites.front_default;
+  }
+
   // get text desc for tooltip and make picture
   $.ajax({
     url: "https://pokeapi.co/api/v2/pokemon-species/"+b,
