@@ -81,7 +81,7 @@ function pokeDisplay(pokedata, id, b) {
 
   }
 
-  // get text desc for tooltip
+  // get text desc for tooltip and make picture
   $.ajax({
     url: "https://pokeapi.co/api/v2/pokemon-species/"+b,
     type: "GET",
@@ -100,10 +100,39 @@ function pokeDisplay(pokedata, id, b) {
       console.log("Error:", textStatus, errorThrown);
     }
   });
-  
+
+// characteristic/nature
+$("#contents").append("<div id='poketext'></div>");
+var natureid = id % 30;
+$.ajax({
+  url: "https://pokeapi.co/api/v2/characteristic/"+natureid,
+  type: "GET",
+  dataType: "json",
+  success: function (data) {
+    console.log(data);
+    var natdesc = data.descriptions[7].description;
+    console.log(natdesc);
+    $("#poketext").append(`<p>${natdesc}</p>`);
+    $("#poketext").append(`<div id="lvl"><p>Met at </p><p class="blue">Lv.${(id%10)+1}</p></div>`);
+    $("#poketext").append(`<p id="types"></p>`);
+    for (var i = 0; i < pokedata.types.length; ++i) {
+      var typename = pokedata.types[i].type.name;
+      typename = typename[0].toUpperCase()+typename.slice(1)
+      $("#types").append(`${typename}-type`);
+      if (i != pokedata.types.length-1) {
+        $("#types").append(", ");
+      }
+    }
+  },
+  error: function (jqXHR, textStatus, errorThrown) {
+    // do stuff
+    console.log("Error:", textStatus, errorThrown);
+  }
+});
 
   // held item
-  $("#pokepic").append("<div id='status'></div>");
+  setTimeout(function() {
+    $("#pokepic").append("<div id='status'></div>");
   if (pokedata.held_items.length > 0) {
     if ((id % 5) == 2) {
       var held_item = pokedata.held_items[id % pokedata.held_items.length];
@@ -132,51 +161,13 @@ function pokeDisplay(pokedata, id, b) {
       });
     }
   }
+  }, 500);
 
-  // characteristic/nature
-  $("#contents").append("<div id='poketext'></div>");
-  var natureid = id % 30;
-  $.ajax({
-    url: "https://pokeapi.co/api/v2/characteristic/"+natureid,
-    type: "GET",
-    dataType: "json",
-    success: function (data) {
-      console.log(data);
-      var natdesc = data.descriptions[7].description;
-      console.log(natdesc);
-      $("#poketext").append(`<p>${natdesc}</p>`);
-      $("#poketext").append(`<div id="lvl"><p>Met at </p><p class="blue">Lv.${(id%10)+1}</p></div>`);
-      $("#poketext").append(`<p id="types"></p>`);
-      for (var i = 0; i < pokedata.types.length; ++i) {
-        var typename = pokedata.types[i].type.name;
-        typename = typename[0].toUpperCase()+typename.slice(1)
-        $("#types").append(`${typename}-type`);
-        if (i != pokedata.types.length-1) {
-          $("#types").append(", ");
-        }
-      }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      // do stuff
-      console.log("Error:", textStatus, errorThrown);
-    }
-  });
+  
 
  
 
 }
-
-function heldItemFinder(pokedata, id) {
-
-
-  var held_item_obj = { name: held_item_name, desc: '', img: '' };
-
-
-
-
-  return held_item_obj;
-}
-
 
 
 // execution stuff
