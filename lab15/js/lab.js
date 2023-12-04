@@ -88,10 +88,10 @@ function pokeDisplay(pokedata, id, b) {
     dataType: "json",
     success: function (data) {
       console.log(sprite);
-      if (data.genera[7].genus) {
+      try {
         $("#contents").prepend(`<div id="pokepic"><img src="${sprite}" title="${name+"\nThe "+data.genera[7].genus}" /></div>`);
       }
-      else {
+      catch {
         $("#contents").prepend(`<div id="pokepic"><img src="${sprite}" title="${name}" /></div>`);
       }
     },
