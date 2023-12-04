@@ -1,0 +1,94 @@
+/* Here we can set styles for this lab page that we don't want to effect others pages */
+
+/* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
+.minor-section {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #888;
+  background-color: #DDD8C4;
+  display: flow-root;
+}
+
+#output {
+  display: inline-block;
+  margin: 20px;
+  font-family: fangsong;
+  border: solid 1px #888;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+  background-color: lightgrey;
+}
+
+
+#title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+  padding: 10px;
+}
+
+#contents {
+  display: flex;
+  gap: 15px;
+  align-items:center;
+}
+
+#pokepic {
+  position: relative;
+}
+
+#pokepic img {
+  width: 120px;
+  background-color: white;
+  border: solid 3px #888;
+  padding: 2px;
+}
+
+
+#pokename {
+  margin: 0px;
+}
+
+#pokenick {
+  margin: 0px;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#status {
+  position: absolute;
+  display:flex;
+  flex-direction: row-reverse;
+  width: 115px;
+  height: 30px;
+  left: 12px;
+  bottom : 6px;
+}
+
+#status img {
+  padding: 0px;
+  border: solid 1px #888;
+  width: 30px;
+  background-color: white;
+}
+
+#poketext {
+  margin-right: 5px;
+  width: 120px;
+}
+
+#lvl {
+  margin-top: -20px;
+  margin-bottom: -20px;
+  gap: 10px;
+  display:flex;
+}
+
+.blue {
+  color: blue;
+}
