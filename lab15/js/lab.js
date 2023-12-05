@@ -195,7 +195,7 @@ $("#entry").on("submit", function (e) {
   // generate pokemon from name entry
   var name = $("#name").val();
   var nums = numberGen(name);
-  console.log(name, nums[1]);
+  console.log(name, nums[0], nums[1]);
 
   var endpoint = "https://pokeapi.co/api/v2/pokemon/"
 
