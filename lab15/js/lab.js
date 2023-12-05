@@ -118,7 +118,7 @@ $.ajax({
     var natdesc = data.descriptions[7].description;
     console.log(natdesc);
     $("#poketext").append(`<p>${natdesc}</p>`);
-    $("#poketext").append(`<div id="lvl"><p>Met at </p><p class="blue">Lv.${(id%10)+1}</p></div>`);
+    $("#poketext").append(`<div id="lvl"><p>Met at </p><p class="blue">Lv. ${(id%10)+1}</p></div>`);
     $("#poketext").append(`<p id="types"></p>`);
     for (var i = 0; i < pokedata.types.length; ++i) {
       var typename = pokedata.types[i].type.name;
@@ -132,6 +132,16 @@ $.ajax({
   error: function (jqXHR, textStatus, errorThrown) {
     // do stuff
     console.log("Error:", textStatus, errorThrown);
+    $("#poketext").append(`<div id="lvl"><p>Met at </p><p class="blue">Lv. ${(id%10)+1}</p></div>`);
+    $("#poketext").append(`<p id="types"></p>`);
+    for (var i = 0; i < pokedata.types.length; ++i) {
+      var typename = pokedata.types[i].type.name;
+      typename = typename[0].toUpperCase()+typename.slice(1)
+      $("#types").append(`${typename}-type`);
+      if (i != pokedata.types.length-1) {
+        $("#types").append(", ");
+      }
+    }
   }
 });
 
