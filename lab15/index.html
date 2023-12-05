@@ -28,12 +28,30 @@
 			<h1>Lab 15 - AJAX</h1>
 			<div class="minor-section" id="challenge">
 					<h2>Challenge</h2>
-					<p></p>
+					<p>The challenge for this lab was to learn how to use AJAX to interact with APIs!</p>
 			</div>
 
 			<div class="minor-section" id="thoughts">
 					<h2>Thoughts</h2>
-					<p></p>
+					<p>This was... a little tough at first but I got it! It just took a bit of experimenting... 
+						and choosing the right API. I tried a plant database API called <a href="https://trefle.io/">trefle</a> at first, 
+						which was cool, but I couldn't get it to work because of some complicated auth stuff. Essentially, 
+						I think for security they blocked off requests made directly from browsers using my key, and you'd 
+						have to use a funny serverside thing to get a temp token for the website user to be able to make requests. 
+						That was kind of a headache and I didn't wanna have to figure out a workaround (which would've been proxies 
+						to bypass CORS? or something) so I just end up using <a href="https://pokeapi.co/">PokeAPI</a> instead, which was a lot less 
+						complicated.<br><br>
+						Even then PokeAPI came with its own challenges (its documentation is kind of all over the place), but I think I 
+						got it in a place that I like! I had some trouble with the fact AJAX calls are asynchronous, and thus my code executed 
+						at weird times and not the order I expected to, but I worked around that by putting my jQuery page modifications inside of 
+						the relevant AJAX calls and otherwise using setTimeout() to sort of half-guarantee my AJAX calls would happen "in order." 
+						That's not a perfect solution and I believe the official way to do it would be to use $.when().then() to ensure the "then" code 
+						is deferred to when after the AJAX stuff contained in "when" completes, but I kind of mostly didn't want to deal with that 
+						for this one and went the cheater round. I'll definitely be experimenting with that after this lab though.<br><br>
+						All in all though I'm pretty happy with what I did, and I think it's super fun! Go see who your Pokefriend is!!! 
+						It is based on a variety of calculations done to your name so it won't change if you put the same thing in twice, 
+						but it is case-sensitive and such so feel free to experiment and find the Pokefriend that best suits you!! :)
+					</p>
 			</div>
 
 			<div class="minor-section" id="results">
