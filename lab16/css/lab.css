@@ -1,0 +1,48 @@
+/* Here we can set styles for this lab page that we don't want to effect others pages */
+
+/* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
+.minor-section {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: solid 1px #888;
+  background-color: #DDD8C4;
+  display: flow-root;
+}
+
+i {
+  margin: 10px;
+}
+
+#error {
+  margin: 10px;
+}
+
+#output {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px #888;
+  border-radius: 4px;
+}
+
+#comic {
+  max-width: 500px;
+}
+
+#nav-buttons {
+  width: 100%;
+}
+
+#next-button {
+  float: left;
+  margin: 10px;
+}
+
+#prev-button {
+  float: right;
+  margin: 10px;
+}
+
+.hidden {
+  display:none;
+}
